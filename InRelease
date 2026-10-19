@@ -8,17 +8,17 @@ Codename: stable
 Architectures: all amd64 arm64
 Components: main
 Description: Repositorio APT de Pulso (monitor de recursos para GNOME)
-Date: Mon, 19 Oct 2026 01:47:58 UTC
+Date: Mon, 19 Oct 2026 04:02:45 UTC
 MD5Sum:
- 12f481ba976f1aa40d32ab953abb15fd 886 Packages
- 64cf825c3e943bb54ffbc4a79ab7bdc7 622 Packages.gz
+ 3363d895fab904aaf076cfbc19966328 1772 Packages
+ 3bc30d6e09920946b686c1219bf72497 760 Packages.gz
 SHA256:
- df816ab8cd842734886b2b77b8eadf1caa6bc119fa906f03af1605a9e1f37268 886 Packages
- b2403e7942f4b229bc6ca4a2776dc98c001849c4ac326a5a5b0b34c369bfbd2c 622 Packages.gz
+ 02d4a1b9caadeebdcda2ddcc3ab071fa176b3a91bd8f9f57b17c8f08af5a05df 1772 Packages
+ 7a3421476eb1a2ffe36e15bc92da837b56908d27f9db1843f25283f39e50b89f 760 Packages.gz
 -----BEGIN PGP SIGNATURE-----
 
-iHUEARYKAB0WIQTBbLzvzy58LcTD7ChwpH+uXKgckgUCatV2zgAKCRBwpH+uXKgc
-kmolAP9Cah2mtwjwS1rg495eGXRzfFqPgrLRdK7LzeGiPyI2BgEAvAoEcaOAmUH9
-pOobfyRu7g7hEWOqp7yqmXYqdFDg4Ac=
-=VHLb
+iHUEARYKAB0WIQTBbLzvzy58LcTD7ChwpH+uXKgckgUCatWWZQAKCRBwpH+uXKgc
+ktLeAP4n1xCoPbvO4lt4wjnZDI8FHfYOZ/M9xlQ3NKuSeN8QXAD/TcpL2nKreQIx
+9rbK6Am8KAlaMPYd1A8uzn13wS39EgQ=
+=Zzdb
 -----END PGP SIGNATURE-----
