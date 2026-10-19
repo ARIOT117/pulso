@@ -170,4 +170,4 @@ que la envíe a la unidad de esa app (`systemctl --user kill`). Solo lo hace con
 
 ---
 
-Licencia [MIT](LICENSE) · © 2026 Diego Esparza
+Licencia [MIT](LICENSE) · © 2026 ARIOT117
