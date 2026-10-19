@@ -10,7 +10,7 @@ license=('MIT')
 depends=('python' 'python-gobject' 'gtk4' 'libadwaita' 'iproute2')
 optdepends=('nvidia-utils: uso de GPU y VRAM por aplicación en tarjetas NVIDIA')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/$_tag.tar.gz")
-sha256sums=('@SHA256@')
+sha256sums=('b6b73014dd8cb9e1dbae9f888a7cc00a6feda07a3715fcb8253605e2b5f8eb76')
 
 package() {
   cd "$pkgname-${_tag#v}"

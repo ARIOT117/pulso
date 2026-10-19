@@ -12,6 +12,6 @@ pkgbase = pulso
 	depends = iproute2
 	optdepends = nvidia-utils: uso de GPU y VRAM por aplicación en tarjetas NVIDIA
 	source = pulso-0.1.0beta2.tar.gz::https://github.com/ARIOT117/pulso/archive/refs/tags/v0.1.0-beta2.tar.gz
-	sha256sums = @SHA256@
+	sha256sums = b6b73014dd8cb9e1dbae9f888a7cc00a6feda07a3715fcb8253605e2b5f8eb76
 
 pkgname = pulso
