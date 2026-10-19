@@ -1,0 +1,8 @@
+pulso (0.1.0~beta1) unstable; urgency=medium
+
+  * Primera beta pública.
+  * Memoria por aplicación con PSS, CPU, GPU NVIDIA (uso y VRAM), disco y red (TCP).
+  * Panel de detalle por métrica con historial de 5 minutos.
+  * Acciones: terminar, matar, detener y reanudar aplicaciones.
+
+ -- Diego Esparza <diegoisaiuwu@gmail.com>  Sun, 18 Oct 2026 20:00:00 -0600

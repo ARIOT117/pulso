@@ -1,0 +1,16 @@
+Package: pulso
+Version: @VERSION@
+Section: utils
+Priority: optional
+Architecture: all
+Maintainer: Diego Esparza <diegoisaiuwu@gmail.com>
+Installed-Size: @SIZE@
+Depends: python3 (>= 3.10), python3-gi, gir1.2-gtk-4.0 (>= 4.14), gir1.2-adw-1 (>= 1.6), iproute2
+Suggests: nvidia-driver
+Homepage: https://github.com/ARIOT117/pulso
+Description: monitor de recursos por aplicación con memoria real (PSS)
+ Pulso muestra cuánto consume de verdad cada aplicación en GNOME:
+ memoria PSS (la compartida se reparte en lugar de contarse varias veces),
+ CPU, GPU NVIDIA (uso y VRAM), disco y red, con historial de 5 minutos.
+ .
+ Permite terminar, matar, detener y reanudar aplicaciones.

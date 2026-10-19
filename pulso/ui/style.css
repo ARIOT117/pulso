@@ -1,0 +1,198 @@
+/* Pulso · «papel oscuro» */
+:root {
+  --window-bg-color: #151514;
+  --window-fg-color: #ecebe7;
+  --view-bg-color: #151514;
+  --view-fg-color: #ecebe7;
+  --headerbar-bg-color: #151514;
+  --headerbar-fg-color: #ecebe7;
+  --headerbar-shade-color: transparent;
+  --popover-bg-color: #252523;
+  --popover-fg-color: #ecebe7;
+  --dialog-bg-color: #1a1a19;
+  --dialog-fg-color: #ecebe7;
+  --accent-bg-color: #55c483;
+  --accent-fg-color: #151514;
+  --accent-color: #55c483;
+  --card-bg-color: #1a1a19;
+}
+
+window.pulso, window.pulso * { font-family: "Adwaita Sans", "Ubuntu Sans", sans-serif; }
+window.pulso { background-color: #151514; color: #ecebe7; }
+.numeric { font-feature-settings: "tnum"; }
+.faint { color: #6f6e69; }
+
+/* cabecera */
+.pulso-header { min-height: 70px; padding: 0 22px; background: #151514; box-shadow: none; }
+.brand { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; }
+entry.pill-search {
+  margin: 18px 0;
+  min-height: 34px; border-radius: 999px; padding: 0 12px;
+  background: #1f1f1d; border: 1px solid rgba(255,255,255,0.05); color: #ecebe7;
+  font-size: 13px; box-shadow: none; outline: none;
+}
+entry.pill-search:focus-within { border-color: rgba(85,196,131,0.45); }
+entry.pill-search image { color: #8b8a85; }
+
+/* franja de métricas */
+.metric-strip { margin: 6px 24px 0 24px; }
+button.metric-cell {
+  padding: 0; border-radius: 14px; background: rgba(255,255,255,0.02); box-shadow: none; border: none;
+  color: #ecebe7; font-weight: normal; transition: background 200ms;
+}
+button.metric-cell:hover { background: rgba(255,255,255,0.045); }
+button.metric-cell:active { background: rgba(255,255,255,0.06); }
+.metric-text { padding: 18px 18px 0 18px; }
+.metric-label { font-size: 12px; color: #8b8a85; }
+.metric-open { font-size: 12px; color: #55544f; }
+.metric-value { font-size: 26px; font-weight: 500; letter-spacing: -0.03em; margin-top: 6px; }
+.metric-sub { font-size: 11px; color: #6f6e69; }
+
+/* tabla */
+scrolledwindow.table-wrap, .table-wrap { margin-left: 32px; margin-right: 32px; }
+columnview.app-table { background: none; font-size: 13px; }
+columnview.app-table > header { margin: 0; padding: 18px 0 6px 0; background: none; box-shadow: none; border: none; }
+columnview.app-table > header > button {
+  background: none; box-shadow: none; border: none; padding: 4px 20px 4px 20px;
+  font-size: 12px; font-weight: normal; color: #6f6e69;
+}
+columnview.app-table > header > button:hover { color: #b0afa9; }
+columnview.app-table > header > button sort-indicator { min-width: 10px; color: #8b8a85; }
+columnview.app-table > listview { background: none; }
+columnview.app-table > listview > row {
+  min-height: 50px; border-radius: 10px; background: none; margin-top: 2px;
+  transition: background 150ms;
+}
+columnview.app-table > listview > row:hover { background: rgba(255,255,255,0.035); }
+columnview.app-table > listview > row:selected { background: rgba(255,255,255,0.06); color: #ecebe7; }
+columnview.app-table > listview > row > cell { padding: 0 20px; }
+.app-name { font-size: 13.5px; font-weight: 500; }
+.cell-num { font-size: 13px; }
+.warn { color: #f5b75b; }
+.hot  { color: #ff8a80; }
+.paused-badge {
+  font-size: 10.5px; padding: 2px 7px; border-radius: 999px;
+  background: #442e09; color: #f8c379;
+}
+levelbar.mem-bar { min-width: 56px; }
+levelbar.mem-bar > trough { min-height: 3px; min-width: 56px; border-radius: 2px; padding: 0; background: rgba(255,255,255,0.07); border: none; box-shadow: none; }
+levelbar.mem-bar > trough > block { min-height: 3px; border-radius: 2px; border: none; }
+levelbar.mem-bar > trough > block.filled { background: #be8ce1; }
+levelbar.mem-bar > trough > block.empty { background: none; }
+
+/* barra de acciones */
+.pulso-actionbar {
+  padding: 14px 32px; background: #181817;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+.hint { font-size: 12.5px; }
+.sel-name { font-weight: 500; font-size: 13px; }
+button.info-btn { min-width: 34px; min-height: 34px; padding: 0; background: #242422; color: #b0afa9; }
+button.info-btn:hover { background: #2c2c2a; }
+.term-split { border-radius: 8px; }
+.term-split:disabled { opacity: 0.4; }
+button.term-main, menubutton.term-more > button {
+  min-height: 34px; border-radius: 0; border: none; box-shadow: none;
+  background: #5a2522; color: #ffa8a0; font-size: 13px; font-weight: 600;
+}
+button.term-main { padding: 0 16px; border-radius: 8px 0 0 8px; }
+menubutton.term-more > button { min-width: 30px; padding: 0; border-radius: 0 8px 8px 0; border-left: 1px solid #3c1715; }
+button.term-main:hover { background: #6a2c29; }
+menubutton.term-more > button:hover, menubutton.term-more > button:checked { background: #742e2b; }
+button.term-main:disabled, menubutton.term-more > button:disabled { color: #ffa8a0; }
+
+popover.actions-menu > contents {
+  padding: 6px; border-radius: 10px; background: #252523;
+  border: 1px solid rgba(255,255,255,0.07); box-shadow: 0 16px 40px -8px rgba(0,0,0,0.6);
+  min-width: 210px;
+}
+button.menu-item { min-height: 0; padding: 8px 10px; border-radius: 6px; background: none; font-weight: normal; font-size: 13px; }
+button.menu-item:hover { background: rgba(255,255,255,0.06); }
+.mono-hint { font-family: "Adwaita Mono", monospace; font-size: 10.5px; color: #6f6e69; }
+
+/* toast claro en píldora */
+toast { background: #ecebe7; color: #151514; border-radius: 999px; font-weight: 500; font-size: 13px;
+        box-shadow: 0 10px 30px -8px rgba(0,0,0,0.6); }
+toast button { color: #151514; }
+
+/* diálogos de detalle */
+dialog.metric-dialog > floating-sheet > sheet, dialog.metric-dialog sheet {
+  background: #1a1a19; border-radius: 14px; border: 1px solid rgba(255,255,255,0.07);
+  box-shadow: 0 40px 100px -20px rgba(0,0,0,0.8);
+}
+.dialog-tabs { padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+button.tab-btn { min-height: 30px; padding: 0 12px; border-radius: 7px; background: none;
+                 color: #8b8a85; font-size: 12.5px; font-weight: normal; box-shadow: none; }
+button.tab-btn:hover { color: #ecebe7; }
+button.tab-btn:checked { background: #262624; color: #ecebe7; }
+button.close-btn { min-width: 28px; min-height: 28px; padding: 0; border-radius: 999px;
+                   background: #262624; color: #b0afa9; font-size: 15px; }
+button.close-btn:hover { background: #30302e; }
+.dialog-main { padding: 22px 28px 24px 28px; }
+.dialog-side { padding: 26px 20px; background: #171716; border-left: 1px solid rgba(255,255,255,0.06); }
+.side-title { padding: 0 8px 10px 8px; }
+.d-title { font-size: 13px; color: #8b8a85; }
+.d-value { font-size: 40px; font-weight: 500; letter-spacing: -0.04em; }
+.d-sub { font-size: 12.5px; color: #6f6e69; }
+.d-live { font-size: 11.5px; color: #8b8a85; }
+.d-section { font-size: 12px; color: #8b8a85; }
+.axis-label { font-family: "Adwaita Mono", monospace; font-size: 10px; color: #55544f; }
+.stats-grid { border-top: 1px solid rgba(255,255,255,0.06); }
+.stat-cell { padding: 10px 12px 10px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.stat-k { font-size: 11.5px; color: #8b8a85; }
+.stat-v { font-size: 15px; }
+.legend-item { font-size: 12px; color: #b0afa9; }
+levelbar.core-bar > trough { min-width: 6px; border-radius: 4px; padding: 0; background: rgba(255,255,255,0.05); border: none; box-shadow: none; }
+levelbar.core-bar > trough > block { border-radius: 4px; border: none; min-width: 6px; }
+levelbar.core-bar > trough > block.filled { background: #60aaf3; }
+levelbar.core-bar > trough > block.empty { background: none; }
+.core-label { font-family: "Adwaita Mono", monospace; font-size: 9.5px; color: #6f6e69; }
+.top-row { padding: 10px 8px; border-radius: 8px; }
+.top-row:hover { background: rgba(255,255,255,0.03); }
+.top-name { font-size: 13px; }
+.top-value { font-size: 12.5px; }
+levelbar.thin-bar > trough { min-height: 2px; border-radius: 2px; padding: 0; background: rgba(255,255,255,0.06); border: none; box-shadow: none; }
+levelbar.thin-bar > trough > block { min-height: 2px; border-radius: 2px; border: none; }
+levelbar.thin-bar > trough > block.filled { background: #8b8a85; }
+levelbar.thin-bar > trough > block.empty { background: none; }
+
+/* detalles de la app */
+.app-head { padding: 22px 24px 18px 24px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.app-title { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; }
+.proc-head { padding: 0 12px; }
+.proc-row { padding: 7px 12px; border-radius: 6px; font-family: "Adwaita Mono", monospace; font-size: 11.5px; }
+.proc-row:hover { background: rgba(255,255,255,0.04); }
+.proc-name { color: #b9bbc2; }
+.proc-pid { color: #5c5f68; }
+
+/* cabecera propia de la tabla */
+.table-header { margin: 0 32px; padding: 22px 0 8px 0; }
+button.th { background: none; box-shadow: none; border-radius: 0; padding: 0 20px; min-height: 22px;
+            font-size: 12px; font-weight: normal; color: #6f6e69; }
+button.th:hover { color: #b0afa9; background: none; }
+.th-active { color: #8b8a85; }
+levelbar.thin-bar.cpu > trough > block.filled { background: #60aaf3; }
+levelbar.thin-bar.mem > trough > block.filled { background: #be8ce1; }
+levelbar.thin-bar.gpu > trough > block.filled { background: #57bc80; }
+levelbar.thin-bar.disk > trough > block.filled { background: #d49838; }
+levelbar.thin-bar.net > trough > block.filled { background: #00bcc5; }
+
+.core-pct { font-family: "Adwaita Mono", monospace; font-size: 9.5px; color: #8b8a85; }
+.core-label { color: #55544f; }
+.top-empty { font-size: 12.5px; color: #55544f; padding: 10px 8px; }
+.core-name { font-family: "Adwaita Mono", monospace; font-size: 11px; color: #8b8a85; }
+.core-grid .core-pct { font-size: 11px; color: #b0afa9; }
+.empty-cell { opacity: 0.3; }
+
+/* scrollbar delgado y oscuro (columna del detalle, tabla) */
+scrollbar.vertical slider { min-width: 4px; border-radius: 4px; background-color: rgba(255,255,255,0.14); }
+scrollbar.vertical:hover slider { min-width: 6px; background-color: rgba(255,255,255,0.24); }
+scrollbar { background: none; border: none; }
+scrolledwindow.thin-scroll > scrollbar.vertical { margin: 6px 2px; }
+scrolledwindow.thin-scroll > scrollbar.vertical > range > trough { background: none; min-width: 4px; }
+scrolledwindow.thin-scroll > scrollbar.vertical > range > trough > slider {
+  min-width: 4px; border: none; border-radius: 4px; background-color: rgba(255,255,255,0.14); }
+scrolledwindow.thin-scroll > scrollbar { background: none; border: none; padding: 0; min-width: 0; }
+scrolledwindow.thin-scroll > scrollbar slider { min-width: 4px; min-height: 40px; margin: 0;
+  border: none; border-radius: 4px; background-color: rgba(255,255,255,0.12); }
+scrolledwindow.thin-scroll > scrollbar:hover slider { background-color: rgba(255,255,255,0.22); }

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Pulso
+GenericName=Monitor de recursos
+Comment=Consumo real de cada aplicación: memoria PSS, CPU, GPU, disco y red
+Exec=python3 -m pulso
+Path=@APPDIR@
+Icon=io.github.ariot117.Pulso
+Terminal=false
+Categories=GNOME;GTK;System;Monitor;
+Keywords=monitor;recursos;memoria;cpu;gpu;procesos;
+StartupNotify=true
