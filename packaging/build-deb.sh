@@ -8,21 +8,8 @@ stage="$(mktemp -d)"
 trap 'rm -rf "$stage"' EXIT
 root="$stage/pulso"
 
-install -d "$root/DEBIAN" "$root/usr/lib/pulso" "$root/usr/bin" \
-  "$root/usr/share/applications" "$root/usr/share/metainfo" \
-  "$root/usr/share/icons/hicolor/scalable/apps" "$root/usr/share/doc/pulso"
-
-# programa (sin cachés de Python)
-cp -r "$here/pulso" "$root/usr/lib/pulso/"
-install -d "$root/usr/lib/pulso/data"
-install -m 644 "$here/data/$id.svg" "$root/usr/lib/pulso/data/"
-find "$root/usr/lib/pulso" -name __pycache__ -prune -exec rm -rf {} +
-find "$root/usr/lib/pulso" -type f -exec chmod 644 {} +
-
-install -m 755 "$here/packaging/pulso" "$root/usr/bin/pulso"
-install -m 644 "$here/packaging/$id.desktop" "$root/usr/share/applications/"
-install -m 644 "$here/packaging/$id.metainfo.xml" "$root/usr/share/metainfo/"
-install -m 644 "$here/data/$id.svg" "$root/usr/share/icons/hicolor/scalable/apps/"
+install -d "$root/DEBIAN" "$root/usr/share/doc/pulso"
+"$here/packaging/install-files.sh" "$root"
 install -m 644 "$here/packaging/copyright" "$root/usr/share/doc/pulso/copyright"
 gzip -9n -c "$here/packaging/changelog" > "$root/usr/share/doc/pulso/changelog.Debian.gz"
 chmod 644 "$root/usr/share/doc/pulso/changelog.Debian.gz"

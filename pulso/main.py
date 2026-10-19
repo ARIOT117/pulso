@@ -30,10 +30,14 @@ class PulsoApp(Adw.Application):
         settings.load()
         # el diseño es «papel oscuro»: forzamos el esquema oscuro de libadwaita
         Adw.StyleManager.get_default().set_color_scheme(Adw.ColorScheme.FORCE_DARK)
-        css = Gtk.CssProvider()
-        css.load_from_path(os.path.join(os.path.dirname(__file__), "ui", "style.css"))
-        Gtk.StyleContext.add_provider_for_display(Gdk.Display.get_default(), css,
-                                                  Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+        # libadwaita 1.6 pasó de colores con nombre (@define-color) a variables CSS
+        ui = os.path.join(os.path.dirname(__file__), "ui")
+        theme = "theme-vars.css" if (Adw.get_major_version(), Adw.get_minor_version()) >= (1, 6) else "theme-named.css"
+        for name in (theme, "style.css"):
+            css = Gtk.CssProvider()
+            css.load_from_path(os.path.join(ui, name))
+            Gtk.StyleContext.add_provider_for_display(Gdk.Display.get_default(), css,
+                                                      Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
         # icono propio también cuando se ejecuta sin instalar
         Gtk.IconTheme.get_for_display(Gdk.Display.get_default()).add_search_path(
             os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data"))

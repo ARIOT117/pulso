@@ -21,6 +21,11 @@
   <url type="bugtracker">https://github.com/ARIOT117/pulso/issues</url>
   <content_rating type="oars-1.1"/>
   <releases>
+    <release version="0.1.0~beta2" date="2026-10-18" type="development">
+      <description>
+        <p>Compatible con libadwaita 1.5 (Ubuntu 24.04, Linux Mint 22, Pop!_OS 24.04) y disponible en el AUR para Arch, CachyOS y derivadas.</p>
+      </description>
+    </release>
     <release version="0.1.0~beta1" date="2026-10-18" type="development"/>
   </releases>
 </component>

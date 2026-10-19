@@ -1,23 +1,7 @@
-/* Pulso · «papel oscuro» */
-:root {
-  --window-bg-color: #151514;
-  --window-fg-color: #ecebe7;
-  --view-bg-color: #151514;
-  --view-fg-color: #ecebe7;
-  --headerbar-bg-color: #151514;
-  --headerbar-fg-color: #ecebe7;
-  --headerbar-shade-color: transparent;
-  --popover-bg-color: #252523;
-  --popover-fg-color: #ecebe7;
-  --dialog-bg-color: #1a1a19;
-  --dialog-fg-color: #ecebe7;
-  --accent-bg-color: #55c483;
-  --accent-fg-color: #151514;
-  --accent-color: #55c483;
-  --card-bg-color: #1a1a19;
-}
+/* Pulso · «papel oscuro»
+   Los colores base del tema van en theme-vars.css (libadwaita ≥ 1.6) o theme-named.css (1.5). */
 
-window.pulso, window.pulso * { font-family: "Adwaita Sans", "Ubuntu Sans", sans-serif; }
+window.pulso, window.pulso * { font-family: "Adwaita Sans", "Inter", "Ubuntu Sans", "Cantarell", sans-serif; }
 window.pulso { background-color: #151514; color: #ecebe7; }
 .numeric { font-feature-settings: "tnum"; }
 .faint { color: #6f6e69; }

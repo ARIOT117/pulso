@@ -1,0 +1,16 @@
+/* Colores del tema para libadwaita 1.5 (colores con nombre; 1.6+ usa theme-vars.css) */
+@define-color window_bg_color #151514;
+@define-color window_fg_color #ecebe7;
+@define-color view_bg_color #151514;
+@define-color view_fg_color #ecebe7;
+@define-color headerbar_bg_color #151514;
+@define-color headerbar_fg_color #ecebe7;
+@define-color headerbar_shade_color transparent;
+@define-color popover_bg_color #252523;
+@define-color popover_fg_color #ecebe7;
+@define-color dialog_bg_color #1a1a19;
+@define-color dialog_fg_color #ecebe7;
+@define-color accent_bg_color #55c483;
+@define-color accent_fg_color #151514;
+@define-color accent_color #55c483;
+@define-color card_bg_color #1a1a19;

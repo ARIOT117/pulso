@@ -68,7 +68,9 @@ class PulsoWindow(Adw.ApplicationWindow):
         self.actions.connect("action", self._on_action)
         self.actions.connect("details", lambda *_: self._open_details())
 
-        self.loading = Adw.Spinner(halign=Gtk.Align.CENTER, valign=Gtk.Align.CENTER,
+        # Adw.Spinner existe desde libadwaita 1.6; en 1.5 se usa el de GTK
+        spinner_cls = getattr(Adw, "Spinner", None) or (lambda **kw: Gtk.Spinner(spinning=True, **kw))
+        self.loading = spinner_cls(halign=Gtk.Align.CENTER, valign=Gtk.Align.CENTER,
                                    width_request=32, height_request=32, vexpand=True)
         self.stack = Gtk.Stack()
         self.stack.add_named(self.loading, "loading")
