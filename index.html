@@ -18,16 +18,19 @@
 <body><main>
 <h1>Pulso</h1>
 <p class="sub">Monitor de recursos por aplicación para GNOME · 0.1.0 beta 1</p>
-<p>Requisitos: Ubuntu 24.10 o posterior (o Debian equivalente) con GTK 4.14+ y libadwaita 1.6+.</p>
+<p>Requisitos: distribución con <code>apt</code> y libadwaita 1.6+ — Ubuntu 24.10 o posterior,
+Debian 13 o posterior. <strong>No</strong> funciona en Ubuntu 24.04, Linux Mint 22 ni Pop!_OS 24.04.</p>
 <h2>Instalar</h2>
-<pre><code>sudo curl -fsSL https://ariot117.github.io/pulso/pulso-archive-keyring.gpg -o /usr/share/keyrings/pulso-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/pulso-archive-keyring.gpg] https://ariot117.github.io/pulso ./" | sudo tee /etc/apt/sources.list.d/pulso.list
-sudo apt update
-sudo apt install pulso</code></pre>
-<p>Las actualizaciones llegan con <code>sudo apt upgrade</code>.</p>
+<p>En una terminal (Ctrl + Alt + T), uno por uno:</p>
+<pre><code>sudo wget -qO /usr/share/keyrings/pulso-archive-keyring.gpg https://ariot117.github.io/pulso/pulso-archive-keyring.gpg</code></pre>
+<pre><code>printf 'Types: deb\nURIs: https://ariot117.github.io/pulso\nSuites: ./\nSigned-By: /usr/share/keyrings/pulso-archive-keyring.gpg\n' | sudo tee /etc/apt/sources.list.d/pulso.sources</code></pre>
+<pre><code>sudo apt update</code></pre>
+<pre><code>sudo apt install pulso</code></pre>
+<p>Ábrelo desde Actividades buscando «Pulso». Las actualizaciones llegan con <code>sudo apt upgrade</code>.</p>
 <h2>Desinstalar</h2>
 <pre><code>sudo apt remove pulso
-sudo rm /etc/apt/sources.list.d/pulso.list /usr/share/keyrings/pulso-archive-keyring.gpg</code></pre>
+sudo rm /etc/apt/sources.list.d/pulso.sources /usr/share/keyrings/pulso-archive-keyring.gpg</code></pre>
+<p>¿Algún error? Mira <a href="https://github.com/ARIOT117/pulso#problemas-frecuentes">Problemas frecuentes</a>.</p>
 <p><a href="https://github.com/ARIOT117/pulso">Código fuente en GitHub</a> · Licencia MIT</p>
 </main></body>
 </html>
