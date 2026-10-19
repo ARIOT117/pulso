@@ -11,7 +11,7 @@
 - Clic en una métrica de arriba para ver el detalle: uso por hilo, composición de la memoria, VRAM por app…
 - Acciones sobre la app seleccionada: **Terminar**, **Matar**, **Detener** y **Reanudar**.
 
-> **Versión beta (0.1.0 beta 1).** Funciona y se usa a diario, pero puede tener fallos.
+> **Versión beta (0.1.0 beta 2).** Funciona y se usa a diario, pero puede tener fallos.
 > Si encuentras uno, abre un [issue](https://github.com/ARIOT117/pulso/issues).
 
 ---
@@ -20,8 +20,9 @@
 
 | | |
 |---|---|
-| **Sistema** | Distribución con `apt` y **libadwaita 1.6 o superior**: Ubuntu **24.10 o posterior** (probado en 26.04 LTS), Debian **13 «trixie»** o posterior y sus derivadas. |
-| **No compatible** | Ubuntu 24.04 LTS, Linux Mint 22.x, Pop!_OS 24.04, Zorin OS 17 y otras basadas en Ubuntu 24.04 (su libadwaita es demasiado antigua). Tampoco Fedora, Arch, etc. (no usan `apt`). |
+| **Ubuntu / Debian** (`apt`) | Necesita **libadwaita 1.5 o superior**: Ubuntu **24.04 LTS o posterior** (probado en 26.04), Linux Mint **22**, Pop!_OS **24.04**, Debian **13 «trixie»** o posterior y sus derivadas. → [Instalación](#instalación) |
+| **Arch** (`pacman`) | Arch Linux, **CachyOS**, EndeavourOS, Manjaro, Garuda… desde el AUR. → [Arch y CachyOS](#arch-cachyos-y-derivadas) |
+| **No compatible** | Ubuntu 22.04, Debian 12, Zorin OS 17 y otras con libadwaita antigua. Fedora y openSUSE todavía no tienen paquete. |
 | **Escritorio** | GNOME recomendado. En otros escritorios funciona, pero la agrupación de procesos por app es menos precisa. |
 | **GPU** | Opcional. Las columnas de GPU necesitan una tarjeta **NVIDIA** con el driver propietario; sin ella simplemente se ocultan. |
 
@@ -31,8 +32,8 @@
 apt-cache policy gir1.2-adw-1
 ```
 
-Mira la línea **Candidato** (o *Candidate*): tiene que ser **1.6** o mayor (por ejemplo `1.7.x` o `1.9.x`).
-Si pone `1.5.x` o menos, Pulso no se podrá instalar en ese sistema.
+Mira la línea **Candidato** (o *Candidate*): tiene que ser **1.5** o mayor (por ejemplo `1.5.0` o `1.9.x`).
+Si pone `1.4.x` o menos (o el paquete no existe), Pulso no se podrá instalar en ese sistema.
 
 ---
 
@@ -74,20 +75,48 @@ pulso
 Si prefieres no añadir el repositorio (en ese caso **no** recibirás actualizaciones automáticas):
 
 ```bash
-wget https://ariot117.github.io/pulso/pulso_0.1.0~beta1_all.deb
+wget https://ariot117.github.io/pulso/pulso_0.1.0~beta2_all.deb
 ```
 
 ```bash
-sudo apt install ./pulso_0.1.0~beta1_all.deb
+sudo apt install ./pulso_0.1.0~beta2_all.deb
 ```
 
 Usa `sudo apt install ./archivo.deb` (con el `./` delante) y no `dpkg -i`: así `apt` instala también las dependencias.
 
 ---
 
+## Arch, CachyOS y derivadas
+
+Pulso está en el [AUR](https://aur.archlinux.org/packages/pulso). Con un ayudante de AUR
+(CachyOS y EndeavourOS ya traen `paru` o `yay`):
+
+```bash
+paru -S pulso
+```
+
+o
+
+```bash
+yay -S pulso
+```
+
+Sin ayudante, a mano:
+
+```bash
+sudo pacman -S --needed git base-devel
+git clone https://aur.archlinux.org/pulso.git
+cd pulso && makepkg -si
+```
+
+Se actualiza con el resto del sistema (`paru` o `yay` sin argumentos) y se desinstala con `sudo pacman -R pulso`.
+Para la GPU NVIDIA hace falta el paquete `nvidia-utils` (lo tienes si usas el driver de NVIDIA).
+
+---
+
 ## Actualizar
 
-Si instalaste con el repositorio, Pulso se actualiza junto con el resto del sistema:
+En Ubuntu/Debian, si instalaste con el repositorio, Pulso se actualiza junto con el resto del sistema:
 
 ```bash
 sudo apt update && sudo apt upgrade
@@ -120,7 +149,7 @@ rm -rf ~/.config/pulso
 | Mensaje o síntoma | Solución |
 |---|---|
 | `wget: orden no encontrada` | Instálalo con `sudo apt install wget` y repite el paso 1. |
-| `pulso : Depende: gir1.2-adw-1 (>= 1.6) pero …` o «dependencias incumplidas» | Tu sistema es demasiado antiguo (ver [Requisitos](#requisitos)). |
+| `pulso : Depende: gir1.2-adw-1 (>= 1.5) pero …` o «dependencias incumplidas» | Tu sistema es demasiado antiguo (ver [Requisitos](#requisitos)). |
 | `NO_PUBKEY …` o «no se pudieron verificar las firmas» | La clave no se descargó bien: repite el paso 1 y luego `sudo apt update`. |
 | `E: No se ha podido localizar el paquete pulso` | Falta `sudo apt update` después del paso 2, o el archivo del paso 2 quedó mal: compruébalo con `cat /etc/apt/sources.list.d/pulso.sources` (deben salir 4 líneas). |
 | `Conflicting values set for option Signed-By` o avisos de entradas duplicadas | Tienes el repositorio añadido dos veces. Borra el antiguo con `sudo rm -f /etc/apt/sources.list.d/pulso.list` y ejecuta `sudo apt update`. |
